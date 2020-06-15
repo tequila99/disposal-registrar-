@@ -1,1 +1,3 @@
-# disposal-registrar-
+# disposal-registrar
+
+Сервис для работы с регистратором выбытия лекарственных средств.
