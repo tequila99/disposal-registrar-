@@ -3,6 +3,6 @@ import disposal from './disposal'
 
 const router = express.Router()
 
-router.use('/disposal', disposal)
+router.use('/disposal', (req,res,next) => { console.log(req.params); next() }, disposal)
 
 module.exports = router

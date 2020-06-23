@@ -6,7 +6,7 @@ import apiCall from '../models/disposal'
 import { DISPOSAL_SERVICES } from '../services'
 const TYPES = ['checkMarks', 'registerMarksByRequisites']
 
-// Добавляем имя сервиса в параметры 
+// Добавляем имя сервиса в параметры
 //
 const addService = name => (req, res, next) => {
   req.body.name = name
@@ -29,7 +29,7 @@ const addType = (req, res, next) => {
     type: req.body.type
   }
   if (req.body.type === 'checkMarks') addCheck(req, res, next)
-  if (req.body.type === 'registerMarksByRequisites') addDocument(req, res, next)  
+  if (req.body.type === 'registerMarksByRequisites') addDocument(req, res, next)
 }
 
 // Добавляет признак окальной проверки в параметр request
@@ -37,7 +37,7 @@ const addType = (req, res, next) => {
 const addCheck = (req, res, next) => {
   req.body.request = {
     ...req.body.request,
-    localCheck: true
+    localCheck: false
   }
   next()
 }

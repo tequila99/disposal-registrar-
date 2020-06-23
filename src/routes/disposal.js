@@ -3,10 +3,10 @@ import { api, addService, addUUID, addType, addMarks } from '../middleware/dispo
 const router = express.Router()
 
 router.get('/', (req, res) => res.status(200).send({ status: 'Ok' }))
-router.get('/status', addService('status'), api)
-router.get('/settings', addService('setting'), api)
-router.get('/info', addService('info'), api)
-router.post('/request', addService('send'), addUUID, addType, addMarks, api)
-router.get('/request', addService('get'), api)
+router.post('/status', addService('status'), api)
+router.post('/settings', addService('setting'), api)
+router.post('/info', addService('info'), api)
+router.post('/request/send', addService('send'), addUUID, addType, addMarks, api)
+router.post('/request/get', addService('get'), api)
 
 module.exports = router

@@ -6,11 +6,16 @@
   "author": "Ivan Milovanov <tequila00@yandex.ru>",
   "license": "MIT",
   "dependencies": {
+    "@serialport/parser-inter-byte-timeout": "^9.0.0",
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "date-fns": "^2.14.0",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
+    "serialport": "^9.0.0",
+    "socket.io": "^2.3.0",
     "uuid": "^8.1.0"
   },
   "devDependencies": {
