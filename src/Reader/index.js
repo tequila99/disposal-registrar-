@@ -16,6 +16,10 @@ const DEVICES = [
     productid: ['1701']
   },
   {
+    vendor: '05F9',
+    productid: ['4204']
+  },
+  {
     name: 'NLS-FM430', // http://www.newlandca.com/download/Documents/UserGuide/UM10054_NLS-FM430_User_Guide.pdf
     vendor: '1EAB',
     productid: ['1D06']
