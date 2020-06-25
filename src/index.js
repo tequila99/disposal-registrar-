@@ -12,5 +12,7 @@ app.set('port', PORT)
 socket(io)
 
 server.listen(PORT, () => {
-  console.log(`Local server running on port: ${PORT}`)
+  console.log('*********************************************************************')
+  console.log(`Сервис для работы с локальным оборудованием запущен на порту: ${PORT}`)
+  console.log('*********************************************************************')
 })
