@@ -22,7 +22,7 @@ const DEVICES = [
   },
   {
     vendor: '1F3A',
-    production: ['1009', '100B']
+    productid: ['1009']
   }
 ]
 
