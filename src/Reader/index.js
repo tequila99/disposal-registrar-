@@ -9,25 +9,28 @@ import parseSscc from './sscc'
 const DEVICES = [
   {
     vendor: '0C2E',
-    productid: ['0CAA', '0CD4']
+    productid: ['0CAA', '0CD4', '0206']
   },
   {
     vendor: '05E0',
     productid: ['1701']
   },
+  // Quick Scan Lite QW2400 (БСМП)
   {
     vendor: '05F9',
     productid: ['4204']
   },
+  // Сканер в терминале
   {
     name: 'NLS-FM430', // http://www.newlandca.com/download/Documents/UserGuide/UM10054_NLS-FM430_User_Guide.pdf
     vendor: '1EAB',
     productid: ['1D06']
   },
+  // Сканер Атол SB2108 Plus (липецк-мед)
   {
     vendor: '1F3A',
     productid: ['1009']
-  }
+  },
 ]
 
 const TIMEOUT = 10000
@@ -101,7 +104,7 @@ class Reader {
             this.timerId = setTimeout(() => this.connect(), TIMEOUT)
           })
           Parser.on('data', data => {
-            // console.log(data)
+            // console.log(data.toString('hex'))
             if (data.readUInt8(0) === 2) {
               console.log('Прочитан полис ОМС')
               console.log(parseOMC(data))

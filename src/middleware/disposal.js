@@ -37,7 +37,7 @@ const addType = (req, res, next) => {
 const addCheck = (req, res, next) => {
   req.body.request = {
     ...req.body.request,
-    localCheck: false
+    localCheck: true
   }
   next()
 }
