@@ -9,11 +9,15 @@ import parseSscc from './sscc'
 const DEVICES = [
   {
     vendor: '0C2E',
-    productid: ['0CAA', '0CD4', '0206']
+    productid: ['0CAA', '0CD4', '0206', '0CA1']
   },
   {
     vendor: '05E0',
     productid: ['1701']
+  },
+  {
+    vendor: '05f9',
+    productid: ['2218']
   },
   // Quick Scan Lite QW2400 (БСМП)
   {

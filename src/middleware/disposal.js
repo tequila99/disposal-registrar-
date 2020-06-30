@@ -91,10 +91,11 @@ const getMessage = ({ name }) => getApi(name).message
 //
 const api = async (req, res, next) => {
   try {
+    console.log(req.body)
     const { data } = await apiCall(req.body)
     res.status(200).send(data ? { ...data } : { rvRequestId: req.body.rvRequestId })
   } catch (err) {
-    console.error(err.message)
+    console.error(err)
     next(createError(503, err.message || getMessage(req.body) || 'Произошла внутрення ошибка сервиса'))
   }
 }
