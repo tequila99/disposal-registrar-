@@ -15,10 +15,6 @@ const DEVICES = [
     vendor: '05E0',
     productid: ['1701']
   },
-  {
-    vendor: '05f9',
-    productid: ['2218']
-  },
   // Quick Scan Lite QW2400 (БСМП)
   {
     vendor: '05F9',
@@ -35,6 +31,11 @@ const DEVICES = [
     vendor: '1F3A',
     productid: ['1009']
   },
+  // Сканер IDZOR 1С 2200 2D
+  {
+    vendor: '2DD6',
+    productid: ['0261']
+  }
 ]
 
 const TIMEOUT = 10000
