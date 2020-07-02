@@ -1,8 +1,8 @@
 {
-  "name": "disposal",
-  "version": "1.0.0",
+  "name": "disposal-registrar",
+  "version": "1.0.9",
   "description": "Работа с регистратором выбытия лекарственных средств",
-  "main": "index.js",
+  "main": "lib/index.js",
   "author": "Ivan Milovanov <tequila00@yandex.ru>",
   "license": "MIT",
   "dependencies": {
@@ -58,9 +58,11 @@
   "scripts": {
     "start": "nodemon --exec babel-node src/index.js",
     "build": "webpack --mode production",
-    "serve": "node dist/periphery-local.js",
+    "serve": "node dist/disposal.js",
     "lint": "eslint src/",
     "lint-fix": "eslint --fix src/",
-    "test": "jest"
+    "test": "jest",
+    "compile": "babel -d lib/ src/",
+    "prepublish": "npm run compile"
   }
 }
