@@ -9,7 +9,7 @@ import parseSscc from './sscc'
 const DEVICES = [
   {
     vendor: '0C2E',
-    productid: ['0CAA', '0CD4', '0206', '0CA1']
+    productid: ['0CAA', '0CD4', '0206', '0CA1', '0720']
   },
   {
     vendor: '05E0',
