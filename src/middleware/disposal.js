@@ -93,6 +93,7 @@ const api = async (req, res, next) => {
   try {
     console.log(req.body)
     const { data } = await apiCall(req.body)
+    console.log(data)
     res.status(200).send(data ? { ...data } : { rvRequestId: req.body.rvRequestId })
   } catch (err) {
     console.error(err)

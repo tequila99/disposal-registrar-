@@ -39,6 +39,11 @@ const DEVICES = [
   {
     vendor: '2DD6',
     productid: ['0261']
+  },
+  // Сканер БитБук SC-60ABH
+  {
+    vendor: 'AC90',
+    productid: ['3003']
   }
 ]
 
@@ -131,6 +136,7 @@ class Reader {
               this.socketio && this.socketio.emit('ean13', { ean13: data.toString().trim() })
             } else if (SSCC_REGEXP.test(data.toString().trim())) {
               console.log('Прочитан код групповой упаковки')
+              console.log(data.toString().trim())
               this.socketio && this.socketio.emit('sscc', parseSscc(data.toString().trim()))
             }
           })
