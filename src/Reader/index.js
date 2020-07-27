@@ -44,6 +44,11 @@ const DEVICES = [
   {
     vendor: 'AC90',
     productid: ['3003']
+  },
+  // VMC BurstScanX L (Воронеж фармация)
+  {
+    vendor: '0647',
+    productid: ['3339']
   }
 ]
 
@@ -51,7 +56,7 @@ const TIMEOUT = 10000
 
 const Parser = new InterByteTimeout({ interval: 30 })
 
-const PRESCRIPTION_REGEXP = new RegExp(/^p([a-zA-Z0-9/+]*==)$/)
+const PRESCRIPTIO8N_REGEXP = new RegExp(/^p([a-zA-Z0-9/+]*==)$/)
 // eslint-disable-next-line no-control-regex
 const MDLP_REGEXP = new RegExp(/01\d{14}.*21[!-&%-_/0-9A-Za-z]{13}\u001d/)
 const EAN13_REGEXP = new RegExp(/^[0-9]{13}$/)
