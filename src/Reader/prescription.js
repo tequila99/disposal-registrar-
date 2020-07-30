@@ -126,13 +126,16 @@ const BARCODE_CONTENT = [
 
 const stringFromBinaryString = str => String.fromCodePoint(...str.split(/([0-1]{8})/).filter(el => el).map(el => parseInt(el, 2)).filter(el => el)).trim()
 
-const dateFromNumber = ({ year, month, day, ...params }) => (
+const formatPerson = personId => personId.toString().length === 11 ? personId.toString() : `0${personId.toString()}`
+
+const dateFromNumber = ({ year, month, day, person_id: personId, ...params }) => (
   {
     ...params,
     day,
     month,
     year,
-    date_rcp: formatISO(new Date(2000 + year, --month, day))
+    date_rcp: formatISO(new Date(2000 + year, --month, day)),
+    person_id: formatPerson(personId)
   }
 )
 
