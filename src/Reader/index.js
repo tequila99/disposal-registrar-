@@ -9,12 +9,13 @@ import parseSscc from './sscc'
 const DEVICES = [
   {
     vendor: '0C2E',
-    productid: ['0CAA', '0CD4', '0206', '0CA1', '0720', '0CCF']
+    productid: ['0CAA', '0CD4', '0206', '0CA1', '0720', '0CCF', '1014']
   },
   {
     vendor: '23D0',
     productid: ['0C82']
   },
+  // Symbol DS 4308
   {
     vendor: '05E0',
     productid: ['1701']
@@ -56,7 +57,7 @@ const TIMEOUT = 10000
 
 const Parser = new InterByteTimeout({ interval: 30 })
 
-const PRESCRIPTIO8N_REGEXP = new RegExp(/^p([a-zA-Z0-9/+]*==)$/)
+const PRESCRIPTION_REGEXP = new RegExp(/^p([a-zA-Z0-9/+]*==)$/)
 // eslint-disable-next-line no-control-regex
 const MDLP_REGEXP = new RegExp(/01\d{14}.*21[!-&%-_/0-9A-Za-z]{13}\u001d/)
 const EAN13_REGEXP = new RegExp(/^[0-9]{13}$/)
