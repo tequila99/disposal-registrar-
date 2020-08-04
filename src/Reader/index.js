@@ -36,10 +36,10 @@ const DEVICES = [
     vendor: '1F3A',
     productid: ['1009']
   },
-  // Сканер IDZOR 1С 2200 2D
+  // Сканер IDZOR 1С 2200 2D и Mercury 2300 p2d
   {
     vendor: '2DD6',
-    productid: ['0261']
+    productid: ['0261', '21CA']
   },
   // Сканер БитБук SC-60ABH
   {
