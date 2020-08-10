@@ -50,6 +50,11 @@ const DEVICES = [
   {
     vendor: '0647',
     productid: ['3339']
+  },
+  // Mindeo 6600-HD
+  {
+    vendor: '27DD',
+    productid: ['0002']
   }
 ]
 
