@@ -55,6 +55,11 @@ const DEVICES = [
   {
     vendor: '27DD',
     productid: ['0002']
+  },
+  // Netum
+  {
+    vendor: '1A86',
+    productid: ['5723']
   }
 ]
 
