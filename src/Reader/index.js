@@ -5,6 +5,9 @@ import parsePrescription from './prescription'
 import parseMdlp from './mdlp'
 import parseOMC from './omc'
 import parseSscc from './sscc'
+const BLUETOOTH_DEVICE = [
+  '00001101-0000-1000-8000-00805F9B34FB'
+]
 
 const DEVICES = [
   {
@@ -73,7 +76,7 @@ const MDLP_REGEXP = new RegExp(/01\d{14}.*21[!-&%-_/0-9A-Za-z]{13}\u001d/)
 const EAN13_REGEXP = new RegExp(/^[0-9]{13}$/)
 const SSCC_REGEXP = new RegExp(/^[0-9]{18,20}$/)
 
-const pnpIDParse = pnpId => DEVICES.some(i => pnpId.includes(i.vendor) && pnpId.includes(i.productid))
+const pnpIDParse = pnpId => DEVICES.some(i => pnpId.includes(i.vendor) && pnpId.includes(i.productid)) || (BLUETOOTH_DEVICE.findIndex(el => pnpId.includes(el)) !== -1)
 
 const testOfPort = item => (item.vendorId && item.productId)
   ? DEVICES.some(i => i.vendor === item.vendorId.toUpperCase() && i.productid.includes(item.productId.toUpperCase()))
