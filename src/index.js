@@ -8,7 +8,7 @@ const io = socketio(server)
 
 const defaultOptions = {
   port: process.env.PORT || 3030,
-  cardReader: true,
+  cardReader: false,
   scanner: true
 }
 
