@@ -67,7 +67,11 @@ const DEVICES = [
   {
     vendor: '28E9',
     productid: ['018A']
-
+  },
+  // mertech cl-2200
+  {
+    vendor: '2DD',
+    productid: ['2A6A']
   }
 ]
 
