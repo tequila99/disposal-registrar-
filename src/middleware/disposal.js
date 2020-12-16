@@ -9,7 +9,7 @@ const TYPES = ['checkMarks', 'registerMarksByRequisites']
 // Добавляем имя сервиса в параметры
 //
 const addService = name => (req, res, next) => {
-  req.body.name = name
+  req.body.name = name  
   next()
 }
 
@@ -64,11 +64,17 @@ const addDocument = (req, res, next) => {
 const addMarks = (req, res, next) => {
   if (!req.body.marks || typeof req.body.marks !== 'object') throw new Error('Не задан массив отсканированних маркировок (КИЗ)')
   if (!req.body.request || typeof req.body.request !== 'object') throw new Error('Отстуствует объект запроса')
-  req.body.request.marks = req.body.marks.reduce((acc, el, i) => {
-    acc = { ...acc, [i + 1]: { mark: getMark(el), ...getSoldPart(el) } }
-    return acc
-  }, {})
-  next()
+  console.log(req.body.marks)
+  try {
+    req.body.request.marks = req.body.marks.reduce((acc, el, i) => {
+      acc = { ...acc, [i + 1]: { mark: getMark(el), ...getSoldPart(el) } }
+      return acc
+    }, {})
+    next()
+  } catch (err) {
+    console.error(err)
+    next(createError(503, err.message || getMessage(req.body) || 'Произошла внутрення ошибка сервиса на этапе обработки списка упаковок'))
+  }
 }
 
 //  Возвращает марку из строки или объекта
@@ -91,7 +97,6 @@ const getMessage = ({ name }) => getApi(name).message
 //
 const api = async (req, res, next) => {
   try {
-    console.log(req.body)
     const { data } = await apiCall(req.body)
     console.log(data)
     res.status(200).send(data ? { ...data } : { rvRequestId: req.body.rvRequestId })

@@ -5,5 +5,5 @@ const parseString = data => getValues(data.match(/01(\d{14}).*21([!-&%-_/0-9A-Za
 
 export default data => ({
   ...parseString(data.toString().trim()),
-  mark: Buffer.from(data.toString('hex').replace(/0d$/, ''), 'hex').toString('base64')
+  mark: Buffer.from(data.toString('hex').replace(/0d$/, '').replace(/0d0a$/, ''), 'hex').toString('base64')
 })
