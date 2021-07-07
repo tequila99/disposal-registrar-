@@ -1,6 +1,6 @@
 {
   "name": "disposal-registrar",
-  "version": "1.0.9",
+  "version": "1.0.14",
   "description": "Работа с регистратором выбытия лекарственных средств",
   "main": "lib/index.js",
   "author": "Ivan Milovanov <tequila00@yandex.ru>",
